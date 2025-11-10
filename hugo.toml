@@ -4,7 +4,7 @@
 #######################################################
 
 # CHỈNH SỬA: Thay thế bằng URL GitHub Pages của bạn
-baseURL = "https://[username_cua_ban].github.io/[ten_repository_cua_ban]/"
+baseURL = "https://Trunghieu-10.github.io/my-hugo-site/"
 languageCode = "vi"
 title = "Trang Web PaperMod Của Tôi"
 
