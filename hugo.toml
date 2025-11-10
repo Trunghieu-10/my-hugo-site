@@ -30,7 +30,8 @@ theme = "universal"
 [params]
 date_format = "2006-01-02"
   # Bật chức năng tìm kiếm (Sử dụng Lunr.js tích hợp sẵn trong theme)
-  enableSearch = true 
+  enableSearch = true
+  custom_css = ["css/custom.css"]
 
   # Cài đặt logo (chỉnh sửa đường dẫn nếu cần)
   logo = "img/logo.png"

@@ -14,9 +14,3 @@
 .box-simple {
     min-height: 230px;
 }
-/* File: static/css/custom.css */
-
-/* Buộc hiển thị ô tìm kiếm */
-#search {
-    display: block !important;
-}

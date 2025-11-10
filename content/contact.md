@@ -2,6 +2,7 @@
 title = "Contact"
 id = "contact"
 type = "page"
+draft: false
 +++
 
 # We are here to help you
