@@ -14,8 +14,9 @@ theme = "PaperMod"
 # Định dạng ngày tháng
 defaultContentLanguage = "vi"
 timeZone = "Asia/Ho_Chi_Minh" # Múi giờ Việt Nam
-paginate = 10 # Số bài viết trên một trang
-
+# Cấu hình Phân trang mới (Thay thế cho paginate = X)
+[pagination]
+  pagerSize = 10  # Số bài viết bạn muốn hiển thị trên mỗi trang danh mục/trang chủ
 #######################################################
 # CẤU HÌNH CHO TÌM KIẾM VÀ OUTPUT
 #######################################################
