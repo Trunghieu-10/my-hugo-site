@@ -39,7 +39,7 @@ jobs:
           echo "${{ runner.temp }}" >> $GITHUB_PATH
 
       - name: Build with Hugo
-        run: |
+        run:
           # Chạy lệnh build chính của Hugo
           hugo --minify 
 
