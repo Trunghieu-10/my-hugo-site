@@ -1,0 +1,16 @@
+# File: config.toml (ở thư mục gốc)
+baseURL = "https://Trunghieu-10.github.io/my-hugo-site/"
+languageCode = "vi"
+title = "Web Của Tôi"
+theme = "PaperMod"
+
+# --- KÍCH HOẠT CHỨC NĂNG TÌM KIẾM ---
+[params]
+  defaultTheme = "light"
+
+[params.search]
+  enable = true 
+  # Mặc định PaperMod đã dùng Fuse.js. Chỉ cần đặt 'enable = true' là đủ.
+
+[outputs]
+  home = [ "HTML", "RSS", "JSON" ] # Phải có "JSON" để tạo file chỉ mục tìm kiếm
