@@ -39,6 +39,7 @@ timeZone = "Asia/Ho_Chi_Minh" # Múi giờ Việt Nam
   keywords = ["hugo", "papermod", "blog"]
   description = "Mô tả ngắn gọn về trang web của bạn."
   defaultTheme = "auto" # 'light' | 'dark' | 'auto'
+  searchPage = true
 
   # Cấu hình tìm kiếm (QUAN TRỌNG CHO PAPERMOD)
   [params.search]
@@ -58,6 +59,15 @@ timeZone = "Asia/Ho_Chi_Minh" # Múi giờ Việt Nam
     name = "Bài Viết"
     url = "/posts/"
     weight = 2
+    # File: hugo.toml
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search" # Tên hiển thị (có thể là "Tìm kiếm" nếu muốn)
+  url = "/search/"
+  weight = 100 # Đặt weight cao để nó xuất hiện ở cuối menu
+
+# ... các mục menu khác (home, posts, ...)
     
   # Cấu hình Footer
   [params.footer]
