@@ -44,6 +44,8 @@ timeZone = "Asia/Ho_Chi_Minh" # Múi giờ Việt Nam
   [params.search]
     enable = true # Bật tính năng tìm kiếm
     # Lọc nội dung tìm kiếm (PaperMod tự động tạo index.json)
+[params.assets]
+  customCss = ["css/custom.css"]
     
   # Cấu hình Menu
   [[menu.main]]

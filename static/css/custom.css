@@ -20,3 +20,6 @@
 #search {
     display: block !important;
 }
+#search-toggle {
+    display: block !important; 
+}
