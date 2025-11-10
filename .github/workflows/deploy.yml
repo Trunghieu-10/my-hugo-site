@@ -1,4 +1,5 @@
-name: Deploy Hugo Universal Site to Pages
+# File: .github/workflows/deploy.yml
+name: Deploy Hugo PaperMod Site to Pages
 
 on:
   push:
@@ -18,31 +19,29 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.126.3
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive 
+          submodules: recursive # Đảm bảo tải theme PaperMod
           fetch-depth: 0
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
+      # SỬ DỤNG PEACEIRIS: Đơn giản và tự động chọn phiên bản mới nhất
       - name: Setup Hugo
-        run: |
-          # Tải và cài đặt phiên bản Hugo Extended
-          wget -O ${{ runner.temp }}/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.tar.gz
-          tar -xzf ${{ runner.temp }}/hugo.tar.gz -C ${{ runner.temp }}
-          echo "${{ runner.temp }}" >> $GITHUB_PATH
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest' # Yêu cầu phiên bản Hugo mới nhất
+          extended: true
 
       - name: Build with Hugo
-        run:
-          # Chạy lệnh build chính của Hugo
+        # Lệnh build Hugo
+        run: |
           hugo --minify 
-
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

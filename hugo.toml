@@ -1,66 +1,61 @@
-# File: hugo.toml (hoặc config.toml)
+# File: hugo.toml
 #######################################################
-# CHỈNH SỬA CÁC THÔNG SỐ CƠ BẢN NÀY
+# CẤU HÌNH CƠ BẢN VÀ THEME
 #######################################################
 
-# 1. Địa chỉ trang web của bạn (RẤT QUAN TRỌNG: Thay thế bằng URL GitHub Pages của bạn)
-baseURL = "https://Trunghieu-10.github.io/my-hugo-site/"
-
-# 2. Ngôn ngữ của trang web
+# CHỈNH SỬA: Thay thế bằng URL GitHub Pages của bạn
+baseURL = "https://[username_cua_ban].github.io/[ten_repository_cua_ban]/"
 languageCode = "vi"
+title = "Trang Web PaperMod Của Tôi"
 
-# 3. Tên trang web hiển thị trên thanh tiêu đề trình duyệt
-title = "Trang Web Hugo Universal Của Tôi"
-
-# 4. Tên theme bạn đang sử dụng (Phải là "universal")
+# Đã chuyển sang theme PaperMod
 theme = "PaperMod"
 
+# Định dạng ngày tháng
+defaultContentLanguage = "vi"
+timeZone = "Asia/Ho_Chi_Minh" # Múi giờ Việt Nam
+paginate = 10 # Số bài viết trên một trang
+
 #######################################################
-# CẤU HÌNH CẦN THIẾT CHO TÌM KIẾM
+# CẤU HÌNH CHO TÌM KIẾM VÀ OUTPUT
+#######################################################
+
+# Khai báo đầu ra JSON cho tìm kiếm (Chỉ cần 'home')
+[outputs]
+  home = ["HTML", "RSS", "JSON"] 
+  
+# Loại bỏ cảnh báo DEPRECATED (Chỉ sử dụng taxonomy)
+[outputs.taxonomy]
+  section = ["HTML", "RSS", "JSON"] 
+
+#######################################################
+# THAM SỐ CỦA THEME PAPERMOD
 #######################################################
 
 [params]
-  # Bật tìm kiếm cho PaperMod
-  [params.assets]
-    disableScrollBarStyle = true
+  # Tiêu đề ngắn gọn cho logo
+  title = "Tên Trang Web" 
+  keywords = ["hugo", "papermod", "blog"]
+  description = "Mô tả ngắn gọn về trang web của bạn."
+  defaultTheme = "auto" # 'light' | 'dark' | 'auto'
 
+  # Cấu hình tìm kiếm (QUAN TRỌNG CHO PAPERMOD)
   [params.search]
-    enable = true
-# --- CÁC CẤU HÌNH KHÁC (ĐÃ SAO CHÉP TỪ EXAMPLESITE) ---
-
-# Cấu hình menu chính
-[[menu.main]]
+    enable = true # Bật tính năng tìm kiếm
+    # Lọc nội dung tìm kiếm (PaperMod tự động tạo index.json)
+    
+  # Cấu hình Menu
+  [[menu.main]]
+    identifier = "home"
     name = "Trang Chủ"
     url = "/"
     weight = 1
-[[menu.main]]
-    name = "Giới Thiệu"
-    url = "/about/"
+  [[menu.main]]
+    identifier = "blog"
+    name = "Bài Viết"
+    url = "/posts/"
     weight = 2
-[[menu.main]]
-    name = "Dịch Vụ"
-    url = "/services/"
-    weight = 3
-[[menu.main]]
-    name = "Liên Hệ"
-    url = "/contact/"
-    weight = 4
-[[menu.main]]
-    name = "Blog"
-    url = "/blog/"
-    weight = 5
-
-# Cấu hình footer
-[params.footer]
-  copyright = "2025. Universal Hugo Theme."
-  poweredby = true
-[mediaTypes]
-[mediaTypes."application/json"]
-    suffixes = ["json"]
-    delimiter = "."
-    [outputFormats]
-  [outputFormats.JSON]
-    mediaType = "application/json"
-    baseName = "index"
-    isPlainText = true
-    notAlternative = true
+    
+  # Cấu hình Footer
+  [params.footer]
+    copyright = "2025. Thiết kế với PaperMod."
