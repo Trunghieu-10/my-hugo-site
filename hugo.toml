@@ -13,50 +13,19 @@ languageCode = "vi"
 title = "Trang Web Hugo Universal Của Tôi"
 
 # 4. Tên theme bạn đang sử dụng (Phải là "universal")
-theme = "universal"
+theme = "PaperMod"
 
 #######################################################
 # CẤU HÌNH CẦN THIẾT CHO TÌM KIẾM
 #######################################################
 
-# Bật tính năng tạo file chỉ mục JSON để Lunr.js tìm kiếm
-[outputs]
-  # Áp dụng cho trang chủ
-  home = ["HTML", "RSS", "JSON"] 
-  # Áp dụng cho các trang danh mục (ví dụ: /blog/, /services/)
-  section = ["HTML", "RSS", "JSON"]
-  # Áp dụng cho các trang taxonomy
-  taxonomy = ["HTML", "RSS", "JSON"]
-
-#######################################################
-# CẤU HÌNH THAM SỐ CỦA THEME UNIVERSAL
-#######################################################
-
 [params]
-date_format = "2006-01-02"
-  # Bật chức năng tìm kiếm (Sử dụng Lunr.js tích hợp sẵn trong theme)
-  enableSearch = true
-  search_file = "index.json"
-  custom_js = ["js/search-init.js"]
-  custom_css = ["css/custom.css"]
+  # Bật tìm kiếm cho PaperMod
+  [params.assets]
+    disableScrollBarStyle = true
 
-  # Cài đặt logo (chỉnh sửa đường dẫn nếu cần)
-  logo = "img/logo.png"
-
-  # Cài đặt Favicon
-  favicon = "img/favicon.ico"
-
-  # Chế độ cuộn mượt (Smooth scrolling)
-  scroll = true
-
-  # Cài đặt nút "Go To Top"
-  goToTop = true
-
-  # Thêm nút mạng xã hội (Chỉnh sửa URL của bạn)
-  twitter = "https://twitter.com/[ten_twitter_cua_ban]" 
-  facebook = "https://facebook.com/[ten_facebook_cua_ban]"
-  linkedin = "https://linkedin.com/in/[ten_linkedin_cua_ban]" 
-
+  [params.search]
+    enable = true
 # --- CÁC CẤU HÌNH KHÁC (ĐÃ SAO CHÉP TỪ EXAMPLESITE) ---
 
 # Cấu hình menu chính
