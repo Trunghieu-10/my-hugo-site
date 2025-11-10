@@ -13,7 +13,7 @@ languageCode = "vi"
 title = "Trang Web Hugo Universal Của Tôi"
 
 # 4. Tên theme bạn đang sử dụng (Phải là "universal")
-theme = "PaperMod"
+theme = "universal"
 
 #######################################################
 # CẤU HÌNH CẦN THIẾT CHO TÌM KIẾM
@@ -37,9 +37,8 @@ date_format = "2006-01-02"
   # Bật chức năng tìm kiếm (Sử dụng Lunr.js tích hợp sẵn trong theme)
   enableSearch = true
   search_file = "index.json"
+  custom_js = ["js/search-init.js"]
   custom_css = ["css/custom.css"]
-    [params.search]
-    enable = true
 
   # Cài đặt logo (chỉnh sửa đường dẫn nếu cần)
   logo = "img/logo.png"
