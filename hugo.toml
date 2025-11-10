@@ -27,8 +27,6 @@ theme = "universal"
   section = ["HTML", "RSS", "JSON"]
   # Áp dụng cho các trang taxonomy
   taxonomy = ["HTML", "RSS", "JSON"]
-  # Áp dụng cho các trang taxonomy terms
-  taxonomyTerm = ["HTML", "RSS", "JSON"]
 
 #######################################################
 # CẤU HÌNH THAM SỐ CỦA THEME UNIVERSAL
