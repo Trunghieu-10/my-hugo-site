@@ -1,7 +1,7 @@
 {
   "search_index": [
     {{ range $index, $page := where .Site.Pages "Type" "in" (slice "post" "page" "blog") }}
-      {{ if not $page.Params.disableSearch }} <--- ĐÃ SỬA LỖI
+      {{ if not $page.Params.disableSearch }}
         {
           "uri": "{{ $page.Permalink }}",
           "title": {{ $page.Title | jsonify }},
