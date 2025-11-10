@@ -28,6 +28,7 @@ theme = "universal"
 #######################################################
 
 [params]
+date_format = "2006-01-02"
   # Bật chức năng tìm kiếm (Sử dụng Lunr.js tích hợp sẵn trong theme)
   enableSearch = true 
 
