@@ -1,15 +1,11 @@
-# File: .github/workflows/deploy.yml (ở .github/workflows/)
 name: Deploy Hugo Universal Site to Pages
 
 on:
-  # Kích hoạt hành động khi có thay đổi được đẩy (push) lên nhánh 'main'
   push:
     branches:
       - main
-  # Cho phép chạy thủ công từ giao diện GitHub
   workflow_dispatch:
 
-# Cài đặt quyền hạn cần thiết để Action có thể ghi vào GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -23,12 +19,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.126.3 # Phiên bản Hugo đề xuất
+      HUGO_VERSION: 0.126.3
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # BẮT BUỘC: Đảm bảo tải theme submodule (Universal)
           submodules: recursive 
           fetch-depth: 0
 
@@ -51,7 +46,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Tải lên thư mục 'public' chứa các file tĩnh đã được build
           path: ./public
 
   deploy:
