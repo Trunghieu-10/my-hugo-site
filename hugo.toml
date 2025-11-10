@@ -21,7 +21,14 @@ theme = "universal"
 
 # Bật tính năng tạo file chỉ mục JSON để Lunr.js tìm kiếm
 [outputs]
-  home = ["HTML", "RSS", "JSON"] # BẮT BUỘC có "JSON"
+  # Áp dụng cho trang chủ
+  home = ["HTML", "RSS", "JSON"] 
+  # Áp dụng cho các trang danh mục (ví dụ: /blog/, /services/)
+  section = ["HTML", "RSS", "JSON"]
+  # Áp dụng cho các trang taxonomy
+  taxonomy = ["HTML", "RSS", "JSON"]
+  # Áp dụng cho các trang taxonomy terms
+  taxonomyTerm = ["HTML", "RSS", "JSON"]
 
 #######################################################
 # CẤU HÌNH THAM SỐ CỦA THEME UNIVERSAL
@@ -79,3 +86,13 @@ date_format = "2006-01-02"
 [params.footer]
   copyright = "2025. Universal Hugo Theme."
   poweredby = true
+[mediaTypes]
+[mediaTypes."application/json"]
+    suffixes = ["json"]
+    delimiter = "."
+    [outputFormats]
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true

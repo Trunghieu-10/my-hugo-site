@@ -1,0 +1,14 @@
+{
+  "search_index": [
+    {{ range $index, $page := where .Site.Pages "Type" "in" (slice "post" "page" "blog") }}
+      {{ if and (not $page.Params.disableSearch) (not $page.IsDraft) }}
+        {
+          "uri": "{{ $page.Permalink }}",
+          "title": {{ $page.Title | jsonify }},
+          "tags": {{ $page.Params.Tags | jsonify }},
+          "content": {{ $page.Plain | jsonify }}
+        }{{ if lt ($index) (sub (len (where .Site.Pages "Type" "in" (slice "post" "page" "blog"))) 1) }},{{ end }}
+      {{ end }}
+    {{ end }}
+  ]
+}
